@@ -16,7 +16,7 @@ Solves problems step-by-step
 Generates study roadmaps for subjects
 Answers student questions based on course-relevant knowledge
 Helps with exam preparation and revision
-MVP Scope
+## MVP Scope
 
 A simple AI tutor system that supports Q&A, step-by-step explanations, and study planning. No mobile app, user accounts, or advanced integrations in the initial version.
 
