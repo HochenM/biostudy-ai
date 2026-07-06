@@ -21,9 +21,3 @@ Helps with exam preparation and revision
 A simple AI tutor system that supports Q&A, step-by-step explanations, and study planning. No mobile app, user accounts, or advanced integrations in the initial version.
 
 
-That makes it:
-
-safer
-more realistic
-better for judges
-easier to build
