@@ -140,3 +140,199 @@ Final Answer
 
 
 The system follows a Retrieval-Augmented Generation (RAG) architecture:
+Educational PDF
+|
+↓
+Text Extraction (PyMuPDF)
+|
+↓
+Text Cleaning & Chunking
+|
+↓
+Sentence Transformer Embeddings
+|
+↓
+FAISS Vector Database
+|
+↓
+Semantic Retrieval
+|
+↓
+Context Construction
+|
+↓
+LLM Generation (FLAN-T5)
+|
+↓
+Final Answer
+
+
+---
+
+# Features
+
+## Document Processing
+
+- Extract text from PDF files
+- Clean and normalize extracted text
+- Split documents into meaningful chunks
+
+## Semantic Search
+
+- Convert text chunks into vector representations
+- Use Sentence Transformer embeddings
+- Retrieve relevant information using FAISS similarity search
+
+## AI Answer Generation
+
+- Use retrieved context from documents
+- Generate natural language explanations using an instruction-tuned LLM
+
+## Domain-Specific Learning
+
+- Answers are based on uploaded educational materials
+- Designed for specialized academic subjects
+
+---
+
+# Technologies Used
+
+## Programming Language
+
+- Python
+
+## NLP & AI
+
+- Hugging Face Transformers
+- Sentence Transformers
+- FLAN-T5
+
+## Vector Search
+
+- FAISS (Facebook AI Similarity Search)
+
+## Document Processing
+
+- PyMuPDF
+
+## Numerical Computing
+
+- NumPy
+
+---
+
+# Project Structure
+BioStudyAI/
+
+│
+├── main.py # Application entry point
+│
+├── pipeline.py # Connects all RAG components
+│
+├── ingest.py # PDF text extraction
+│
+├── chunking.py # Cleaning and text chunking
+│
+├── embeddings.py # Sentence Transformer embeddings
+│
+├── vectorstore.py # FAISS vector database implementation
+│
+├── llm.py # Language model generation
+│
+├── data/
+│ └── biology.pdf # Example educational document
+│
+├── requirements.txt # Required Python packages
+│
+└── README.md
+
+
+---
+
+## Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repository-link>
+   cd BioStudyAI
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   ## Usage
+
+**Run the application:**
+```bash
+python main.py
+```
+
+**The system will:**
+1. Load the educational PDF.
+2. Extract and process text.
+3. Create embeddings.
+4. Build the FAISS knowledge database.
+5. Retrieve relevant information.
+6. Generate an AI answer.
+
+---
+
+## Example
+
+**Question:** > *"What is the function of mitochondria?"*
+
+**Retrieved Knowledge:** > *Mitochondria produces energy through respiration. Cells break down glucose to produce energy (ATP).*
+
+**BioStudy AI Answer:** > *"Mitochondria are organelles responsible for producing energy in cells through cellular respiration. They generate ATP, which provides energy for cellular activities."*
+
+---
+
+## Current Limitations (v1)
+
+* Supports a single PDF knowledge source.
+* No user accounts.
+* No conversation memory (stateless interactions).
+* Basic chunking strategy.
+* Uses a small local language model.
+* No graphical/web interface yet.
+
+---
+
+## Future Improvements
+
+### Version 2
+* Better chunking strategies
+* Multiple PDF support
+* Metadata storage (chapter, page number)
+* Source citations
+* Improved retrieval evaluation
+
+### Version 3
+* Web interface
+* Chat history (conversational memory)
+* User accounts
+* Course management system
+
+### Version 4
+* Deployment as a full educational platform
+* Integration of larger language models
+* Personalized learning recommendations
+
+---
+
+## Learning Goals
+
+This project demonstrates practical implementation of:
+* Retrieval-Augmented Generation (RAG)
+* Vector databases and semantic search
+* Transformer-based embeddings
+* LLM application development
+* AI system architecture
+
+---
+
+## Author
+
+Created as an AI Engineering portfolio project focused on applying Machine Learning and Generative AI to education.
