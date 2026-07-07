@@ -52,6 +52,9 @@ The first version focuses on:
 - Retrieval-based explanations
 
 ---
+## Architecture
+
+The system follows a Retrieval-Augmented Generation (RAG) architecture:
 
 ```text
 Educational PDF
@@ -135,38 +138,25 @@ Final Answer
 
 ---
 
-# Project Structure
+## Project Structure
+
+```text
+BioStudyAI/
+│
+├── main.py              # Application entry point
+├── pipeline.py          # Connects all RAG components
+├── ingest.py            # PDF text extraction
+├── chunking.py          # Cleaning and text chunking
+├── embeddings.py        # Sentence Transformer embeddings
+├── vectorstore.py       # FAISS vector database implementation
+├── llm.py               # Language model generation
+├── data/
+│   └── biology.pdf      # Example educational document
+├── requirements.txt     # Required Python packages
+└── README.md            # Project documentation
+```
 
 
-The system follows a Retrieval-Augmented Generation (RAG) architecture:
-Educational PDF
-|
-↓
-Text Extraction (PyMuPDF)
-|
-↓
-Text Cleaning & Chunking
-|
-↓
-Sentence Transformer Embeddings
-|
-↓
-FAISS Vector Database
-|
-↓
-Semantic Retrieval
-|
-↓
-Context Construction
-|
-↓
-LLM Generation (FLAN-T5)
-|
-↓
-Final Answer
-
-
----
 
 # Features
 
