@@ -53,36 +53,35 @@ The first version focuses on:
 
 ---
 
-# Architecture
-
+```text
 Educational PDF
-|
-↓
+       │
+       ▼
 Text Extraction (PyMuPDF)
-|
-↓
+       │
+       ▼
 Text Cleaning & Chunking
-|
-↓
+       │
+       ▼
 Sentence Transformer Embeddings
-|
-↓
+       │
+       ▼
 FAISS Vector Database
-|
-↓
+       │
+       ▼
 Semantic Retrieval
-|
-↓
+       │
+       ▼
 Context Construction
-|
-↓
+       │
+       ▼
 LLM Generation (FLAN-T5)
-|
-↓
+       │
+       ▼
 Final Answer
 
+```
 
----
 
 # Features
 
