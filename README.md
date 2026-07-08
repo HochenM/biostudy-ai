@@ -227,30 +227,59 @@ BioStudyAI/
 
    ## Usage
 
-**Run the application:**
-```bash
-python main.py
+### 1. Upload your educational PDF
+
+Upload your lecture notes, textbook chapters, or other educational materials that you want BioStudy AI to learn from.
+
+### 2. Build the knowledge base
+
+After uploading the PDF, BioStudy processes the document and creates a searchable knowledge base:
+
+```python
+bot.build()
 ```
 
-**The system will:**
-1. Load the educational PDF.
-2. Extract and process text.
-3. Create embeddings.
-4. Build the FAISS knowledge database.
-5. Retrieve relevant information.
-6. Generate an AI answer.
+This step will:
+1. Extract text from the PDF.
+2. Clean and preprocess the text.
+3. Split the document into meaningful chunks.
+4. Create embeddings for each chunk.
+5. Store embeddings in a FAISS vector database.
 
----
+### 3. Ask questions about your document
 
-## Example
+You can now ask questions directly from your uploaded materials:
 
-**Question:** > *"What is the function of mitochondria?"*
+```python
+answer = bot.ask(
+    "What is the function of mitochondria?"
+)
 
-**Retrieved Knowledge:** > *Mitochondria produces energy through respiration. Cells break down glucose to produce energy (ATP).*
+print(answer)
+```
 
-**BioStudy AI Answer:** > *"Mitochondria are organelles responsible for producing energy in cells through cellular respiration. They generate ATP, which provides energy for cellular activities."*
+BioStudy AI will:
+1. Convert your question into an embedding.
+2. Retrieve the most relevant sections from your PDF.
+3. Use the retrieved information as context.
+4. Generate an answer based only on your uploaded material.
 
----
+### Example Workflow
+
+```python
+# Create BioStudy AI with your uploaded PDF
+bot = RAGPipeline("your_uploaded_pdf.pdf")
+
+# Process the document and build the knowledge base
+bot.build()
+
+# Ask questions
+answer = bot.ask(
+    "What is the function of mitochondria?"
+)
+
+print(answer)
+```
 
 ## Current Limitations (v1)
 
